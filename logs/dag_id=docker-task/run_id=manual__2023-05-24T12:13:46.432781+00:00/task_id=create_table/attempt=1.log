@@ -1,0 +1,47 @@
+[2023-05-24T12:13:47.283+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: docker-task.create_table manual__2023-05-24T12:13:46.432781+00:00 [queued]>
+[2023-05-24T12:13:47.289+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: docker-task.create_table manual__2023-05-24T12:13:46.432781+00:00 [queued]>
+[2023-05-24T12:13:47.289+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-24T12:13:47.290+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-05-24T12:13:47.290+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-24T12:13:47.297+0000] {taskinstance.py:1300} INFO - Executing <Task(PostgresOperator): create_table> on 2023-05-24 12:13:46.432781+00:00
+[2023-05-24T12:13:47.302+0000] {standard_task_runner.py:55} INFO - Started process 582 to run task
+[2023-05-24T12:13:47.308+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'docker-task', 'create_table', 'manual__2023-05-24T12:13:46.432781+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/docker-task.py', '--cfg-path', '/tmp/tmpqir566lg']
+[2023-05-24T12:13:47.314+0000] {standard_task_runner.py:83} INFO - Job 6: Subtask create_table
+[2023-05-24T12:13:47.367+0000] {task_command.py:388} INFO - Running <TaskInstance: docker-task.create_table manual__2023-05-24T12:13:46.432781+00:00 [running]> on host fe8636e26e35
+[2023-05-24T12:13:47.412+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=docker-task
+AIRFLOW_CTX_TASK_ID=create_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-24T12:13:46.432781+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-24T12:13:46.432781+00:00
+[2023-05-24T12:13:47.413+0000] {sql.py:254} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS users(
+                first_name varchar(255) not null
+            );
+        
+[2023-05-24T12:13:47.421+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-05-24T12:13:47.538+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-05-24T12:13:47.539+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 266, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 342, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 144, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+[2023-05-24T12:13:47.547+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=docker-task, task_id=create_table, execution_date=20230524T121346, start_date=20230524T121347, end_date=20230524T121347
+[2023-05-24T12:13:47.553+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 6 for task create_table (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+; 582)
+[2023-05-24T12:13:47.570+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-05-24T12:13:47.584+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
