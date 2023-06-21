@@ -2,20 +2,22 @@
 
 Created a postgres connection with below configurations
 
-![image](https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/c80dcbed-703c-4780-9bd6-74cf923972e0)
+![image](https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/eb5aada9-dff1-451d-ac31-e7493ed0cd03)
+
 
 - The first task, named "create_table" was created. This task utilizes the Python Operator with PostgresHook, a component that interacts with a Postgres database. The task is responsible for creating a table in the database. The connection to the Postgres database is established using the "postgres_conn_id" parameter, which is set to "postgres".
 - The second task, named "insert_execution_time" was created. This task also uses the Python Operator and PostgresHook. Its purpose is to insert values into the table previously created in the database.
 - The third task, named "retrieve_data" was created. This task retrieves the data from the table
 - Finally, the dependencies between the tasks were established. This means that the tasks were linked in a specific order to ensure they are executed sequentially. For example, "create_table" task must be completed before "insert_execution_time" task. These dependencies ensure that the tasks are executed in the desired sequence to achieve the intended workflow.
 
+<img width="1440" alt="Screenshot 2023-06-19 at 7 00 09 PM" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/1728032a-6587-496c-9bea-2c1d4f919da4">
 
-<img width="1440" alt="Screenshot 2023-06-19 at 7 00 09 PM" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/786657b6-6a7f-487a-9e31-6e29c61607b7">
 
  current timestamp inserted successfully into my test table.
  
  <br>
- <img width="398" alt="image" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/be8d96c7-6130-40b2-8519-608d70aee28c">
+<img width="461" alt="Screenshot 2023-06-19 at 7 01 30 PM" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/bd8c06fe-5188-442e-afdc-eaf4ac4d615b">
+
  
  
 # KUBERNETES ASSIGNMENT
@@ -50,7 +52,6 @@ Created a postgres connection with below configurations
 `kubectl apply -f airflow-service.yaml`
 
 - Created a DAG and postgres connection and ran it to get the entries in a postgres table.
-<img width="1440" alt="Screenshot 2023-06-19 at 7 00 09 PM" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/786657b6-6a7f-487a-9e31-6e29c61607b7">
-
 - Results in table : <br>
- <img width="398" alt="image" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/be8d96c7-6130-40b2-8519-608d70aee28c">
+<img width="398" alt="Screenshot 2023-06-19 at 7 05 51 PM" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/28f44580-e613-49cf-8489-26bdfbc059e9">
+
