@@ -52,6 +52,8 @@ Created a postgres connection with below configurations
 `kubectl apply -f airflow-service.yaml`
 
 - Created a DAG and postgres connection and ran it to get the entries in a postgres table.
+  ![image](https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/35983016-3bba-4b25-889a-db03ff4bc6c1)
+
 - Results in table : <br>
 <img width="398" alt="Screenshot 2023-06-19 at 7 05 51 PM" src="https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/28f44580-e613-49cf-8489-26bdfbc059e9">
 
