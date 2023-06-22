@@ -40,7 +40,7 @@ Created a postgres connection with below configurations
 `apt-get install libpq-dev` <br>
 `pip3.7 install "apache-airflow[postgres]==2.5.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.7.txt"` <br>
 `airflow db init` <br>
-`airflow users create -u airflow -p airflow -f arin -l arora -e xyz@gmail.com -r Admin` <br>
+`airflow users create -u airflow -p airflow -f shishir -l singh -e xyz@gmail.com -r Admin` <br>
 
 - Made a postgres-service.yaml and created a service using <br>
 `kubectl apply -f postgres-service.yaml`
