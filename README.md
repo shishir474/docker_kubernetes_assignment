@@ -51,6 +51,10 @@ Created a postgres connection with below configurations
 - Made a airflow-service.yaml and created a service using <br>
 `kubectl apply -f airflow-service.yaml`
 
+- To securely store and manage sensitive credentials, we have created a secret.yaml file. This file contains the encrypted credentials in base64 format. These credentials are required for accessing the PostgreSQL database.
+
+- In the postgres-deployment.yaml file, we reference the secret by its name and extract the corresponding value from the specified key within the secret.yaml file. This ensures that the credentials are securely retrieved and used within the deployment configuration.
+
 - Created a DAG and postgres connection and ran it to get the entries in a postgres table.
   ![image](https://github.com/shishir474/docker_kubernetes_assignment/assets/57223710/35983016-3bba-4b25-889a-db03ff4bc6c1)
 
