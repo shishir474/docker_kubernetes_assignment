@@ -26,3 +26,5 @@ with DAG('docker-dag', start_date=datetime(2022,1,1), schedule_interval='@daily'
         postgres_conn_id= 'postgres',
         sql="select * from test;"
     )    
+
+    create_table >> insert_execution_time >> retrieve_data
